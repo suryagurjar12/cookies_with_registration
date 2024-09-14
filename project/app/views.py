@@ -10,10 +10,12 @@ def registration(request):
         fname=request.POST.get('fname')
         lname=request.POST.get('lname')
         email=request.POST.get('email')
+        password=request.POST.get('password')
         response=render(request,'registration.html')
         response.set_cookie('fname',fname)
         response.set_cookie('lname',lname)
         response.set_cookie('email',email)
+        response.set_cookies('password',password)
         return response
     return render(request,'registration.html')
 
